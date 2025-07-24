@@ -10,19 +10,26 @@ def menu():
     print("6.Salir del programa")
 
 def menu2():
-    print("1.La suma total\n 2.Promedio.\n 3.la cantidad de números positivos y negativos")
+    print("1.La suma total\n 2.Promedio.\n 3.la cantidad de números positivos y negativos.\n 4. Salir")
 
 def pedir_numeros():
     cantidad= int(input("Ingrese la cantidad de números que desea:"))
 
     suma= 0
     contador=0
+    positivo=0
+    negativo=0
 
     for i in range(cantidad):
         numero=int(input("Ingrese número a agregar:"))
         suma += numero
         contador+= 1
-    return suma, contador
+
+        if numero > 0:
+            positivo += 1
+        else:
+            negativo +=1
+    return suma, contador,positivo,negativo
 
 def opcion_uno():
         print("1.La suma total")
@@ -49,7 +56,7 @@ while True:
 
     match opcion:
         case "1":
-            suma, contador = pedir_numeros()
+            suma, contador, positivo, negativo = pedir_numeros()
             while True:
                 print("¿Que desea realizar?")
                 menu2()
@@ -65,6 +72,14 @@ while True:
                         else:
                             print("No hay numeros ingresados")
                     case "3":
+                        print(f"Hay {positivo} positivos y {negativo} negativos")
+                    case "4":
+                        print("Saliendo de opciones...")
+                        break
+        case "2":
+            base= float(input("Ingrese la longitud de la base:"))
+            altura= float(input("Ingrese altura:"))
+            print(f"El ares del triangulo es:{opcion_dos(base,altura)}")
 
 
 
