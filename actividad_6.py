@@ -43,7 +43,7 @@ def opcion_tres(numero):
     if numero % 2 ==0:
         print("Es par")
     else:
-        print("es par")
+        print("es impar")
 
 def promedio(suma,numeros):
     return suma/numeros
@@ -80,6 +80,10 @@ while True:
             base= float(input("Ingrese la longitud de la base:"))
             altura= float(input("Ingrese altura:"))
             print(f"El ares del triangulo es:{opcion_dos(base,altura)}")
+
+        case "3":
+            numero= int(input("Ingrese número entero:"))
+            opcion_tres(numero)
 
 
 
