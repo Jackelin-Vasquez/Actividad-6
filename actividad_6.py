@@ -101,10 +101,11 @@ while True:
         case "5":
             cantidad= int(input("Ingrese cantidad de números:"))
             if cantidad > 0:
+                numero=int(input("Ingrese número 1"))
                 mayor = numero
                 menor = numero
-                for i in range(cantidad):
-                    numero=int(input(f"Ingerse número {i+1}:")
+                for i in range(1,cantidad):
+                    numero=int(input(f"Ingerse número {i+1}:"))
 
                     if numero > mayor:
                         mayor= numero
