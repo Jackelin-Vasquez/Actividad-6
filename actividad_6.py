@@ -112,6 +112,11 @@ while True:
                     if numero < menor:
                         menor = numero
                 print(f"El numero mayor es {mayor} y el número menor es {menor}")
+        case "6":
+            print("Saliendo del programa:")
+            break
+        case _:
+            print("Opcion no valida....")
 
 
 
