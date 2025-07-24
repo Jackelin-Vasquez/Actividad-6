@@ -7,5 +7,28 @@ def menu():
     print("5.Ingresar n números y mostrar cual es mayor y menor")
     print("6.Salir del programa")
 
+def opcion_uno():
+        print("1.La suma total")
+        print("2.El promedio")
+        print("3.La cantidad de números positivos y negativos")
 
-def opcion_uno()
+def opcion_dos(base,altura):
+    return (base*altura)/2
+
+def opcion_tres(numero):
+    if numero % 2 ==0:
+        print("Es par")
+    else:
+        print("es par")
+
+def opcion_cuatro(suma,numeros):
+    return suma/numeros
+
+
+while True:
+    menu()
+
+    opcion= input("Ingrese una opcion:")
+
+
+
