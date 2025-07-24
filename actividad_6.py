@@ -48,11 +48,16 @@ def promedio(suma,numeros):
     return suma/numeros
 
 def opcion_cinco(cantidad):
-    numero= int(input("Ingrese cantidad de números;"))
+    numero= int(input("Ingrese numero 1;"))
     mayor = numero
     menor = numero
     for i in range(1, cantidad):
-        numero = int(input(f"Ingerse número {i + 1}:"))
+        numero = int(input(f"Ingerse número {i+1}:"))
+        if numero > mayor:
+            mayor = numero
+        if numero < menor:
+            menor = numero
+    return mayor, menor
 
 
 while True:
@@ -62,7 +67,7 @@ while True:
 
     match opcion:
         case "1":
-            suma, contador, positivo, negativo = pedir_numeros()
+            resultados = pedir_numeros()
             while True:
                 print("¿Que desea realizar?")
                 menu2()
@@ -71,14 +76,14 @@ while True:
 
                 match sub_opcion:
                     case "1":
-                        print(f"La suma de los numeros es:{suma}")
+                        print(f"La suma de los numeros es:{resultados[0]}")
                     case "2":
-                        if contador > 0:
-                            print(f"El promedio es:{promedio(suma,contador)}")
+                        if resultados[0] > 0:
+                            print(f"El promedio es:{promedio(resultados[0],resultados[1])}")
                         else:
                             print("No hay numeros ingresados")
                     case "3":
-                        print(f"Hay {positivo} positivos y {negativo} negativos")
+                        print(f"Hay {resultados[2]} positivos y {resultados[3]} negativos")
                     case "4":
                         print("Saliendo de opciones...")
                         break
@@ -108,16 +113,9 @@ while True:
         case "5":
             cantidad= int(input("Ingrese cantidad de números:"))
             if cantidad > 0:
-                numero=int(input("Ingrese número 1"))
-                mayor = numero
-                menor = numero
-                for i in range(1,cantidad):
-                    numero=int(input(f"Ingerse número {i+1}:"))
-
-                    if numero > mayor:
-                        mayor= numero
-                    if numero < menor:
-                        menor = numero
+                resultado= opcion_cinco(cantidad)
+                mayor= resultado[0]
+                menor= resultado[1]
                 print(f"El numero mayor es {mayor} y el número menor es {menor}")
         case "6":
             print("Saliendo del programa:")
