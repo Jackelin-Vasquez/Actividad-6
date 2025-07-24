@@ -1,4 +1,6 @@
 #Actividad no.6
+suma= 0
+
 def menu():
     print("1.Ingresar números y mostrar.")
     print("2.Calcular el área de un triángulo.")
@@ -12,11 +14,15 @@ def menu2():
 
 def pedir_numeros():
     cantidad= int(input("Ingrese la cantidad de números que desea:"))
-    numeros= []
+
+    suma= 0
+    contador=0
 
     for i in range(cantidad):
         numero=int(input("Ingrese número a agregar:"))
-        numeros.append(numero)
+        suma += numero
+        contador+= 1
+    return suma, contador
 
 def opcion_uno():
         print("1.La suma total")
@@ -32,7 +38,7 @@ def opcion_tres(numero):
     else:
         print("es par")
 
-def opcion_cuatro(suma,numeros):
+def promedio(suma,numeros):
     return suma/numeros
 
 
@@ -43,14 +49,23 @@ while True:
 
     match opcion:
         case "1":
-            pedir_numeros()
+            suma, contador = pedir_numeros()
             while True:
-                menu2()
                 print("¿Que desea realizar?")
-                pedir_numeros()
-                opcion= input("Ingrese una opcion:")
-                match opcion:
+                menu2()
+
+                sub_opcion= input("Ingrese una opcion:")
+
+                match sub_opcion:
                     case "1":
+                        print(f"La suma de los numeros es:{suma}")
+                    case "2":
+                        if contador > 0:
+                            print(f"El promedio es:{promedio(suma,contador)}")
+                        else:
+                            print("No hay numeros ingresados")
+                    case "3":
+
 
 
 
