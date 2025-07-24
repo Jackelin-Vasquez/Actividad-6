@@ -7,4 +7,5 @@ def menu():
     print("5.Ingresar n números y mostrar cual es mayor y menor")
     print("6.Salir del programa")
 
-def
+
+def opcion_uno()
