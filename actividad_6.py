@@ -1,5 +1,4 @@
 #Actividad no.6
-suma= 0
 
 def menu():
     print("1.Ingresar números y mostrar.")
@@ -85,6 +84,19 @@ while True:
             numero= int(input("Ingrese número entero:"))
             opcion_tres(numero)
 
+        case "4":
+            suma=0
+            numero_calificaciones= int(input("Ingrese cantidad de calificaciones:"))
+            if numero_calificaciones < 0:
+                print("Ingrese calificaciones")
+            else:
+                for i in range(numero_calificaciones):
+                    calificacion= float(input(f"Ingrese calificacion {i+1}:"))
+                    if calificacion < 0 and calificacion > 100:
+                        print("Número no valido")
+                    else:
+                        suma += calificacion
+                print(f"El promedio es {promedio(suma,numero_calificaciones)}")
 
 
 
