@@ -98,5 +98,19 @@ while True:
                         suma += calificacion
                 print(f"El promedio es {promedio(suma,numero_calificaciones)}")
 
+        case "5":
+            cantidad= int(input("Ingrese cantidad de números:"))
+            if cantidad > 0:
+                mayor = numero
+                menor = numero
+                for i in range(cantidad):
+                    numero=int(input(f"Ingerse número {i+1}:")
+
+                    if numero > mayor:
+                        mayor= numero
+                    if numero < menor:
+                        menor = numero
+                print(f"El numero mayor es {mayor} y el número menor es {menor}")
+
 
 
