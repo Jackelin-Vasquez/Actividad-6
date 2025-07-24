@@ -47,6 +47,13 @@ def opcion_tres(numero):
 def promedio(suma,numeros):
     return suma/numeros
 
+def opcion_cinco(cantidad):
+    numero= int(input("Ingrese cantidad de números;"))
+    mayor = numero
+    menor = numero
+    for i in range(1, cantidad):
+        numero = int(input(f"Ingerse número {i + 1}:"))
+
 
 while True:
     menu()
@@ -92,7 +99,7 @@ while True:
             else:
                 for i in range(numero_calificaciones):
                     calificacion= float(input(f"Ingrese calificacion {i+1}:"))
-                    if calificacion < 0 and calificacion > 100:
+                    if calificacion < 0 or calificacion > 100:
                         print("Número no valido")
                     else:
                         suma += calificacion
