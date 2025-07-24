@@ -7,6 +7,10 @@ def menu():
     print("5.Ingresar n números y mostrar cual es mayor y menor")
     print("6.Salir del programa")
 
+def menu2():
+    print("1.La suma total\n 2.Promedio.\n 3.la cantidad de números positivos y negativos")
+
+
 def opcion_uno():
         print("1.La suma total")
         print("2.El promedio")
@@ -29,6 +33,16 @@ while True:
     menu()
 
     opcion= input("Ingrese una opcion:")
+
+    match opcion:
+        case "1":
+            numeros= int(input("Ingrese"))
+            while True:
+            menu2()
+            opcion2= input("Ingrese una opcion:")
+            match case:
+                case "1":
+                    print("SUMA TOTAL")
 
 
 
