@@ -10,6 +10,13 @@ def menu():
 def menu2():
     print("1.La suma total\n 2.Promedio.\n 3.la cantidad de números positivos y negativos")
 
+def pedir_numeros():
+    cantidad= int(input("Ingrese la cantidad de números que desea:"))
+    numeros= []
+
+    for i in range(cantidad):
+        numero=int(input("Ingrese número a agregar:"))
+        numeros.append(numero)
 
 def opcion_uno():
         print("1.La suma total")
@@ -36,13 +43,14 @@ while True:
 
     match opcion:
         case "1":
-            numeros= int(input("Ingrese"))
+            pedir_numeros()
             while True:
-            menu2()
-            opcion2= input("Ingrese una opcion:")
-            match case:
-                case "1":
-                    print("SUMA TOTAL")
+                menu2()
+                print("¿Que desea realizar?")
+                pedir_numeros()
+                opcion= input("Ingrese una opcion:")
+                match opcion:
+                    case "1":
 
 
 
